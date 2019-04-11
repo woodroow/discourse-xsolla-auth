@@ -1,0 +1,8 @@
+plugins:
+  xsolla_auth_login:
+    default: ""
+  xsolla_auth_secret:
+    default: ""
+  xsolla_auth_enabled:
+    client: true
+    default: false

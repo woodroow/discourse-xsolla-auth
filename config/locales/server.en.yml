@@ -1,0 +1,7 @@
+# encoding: utf-8
+
+en:
+  site_settings:
+    xsolla_auth_enabled: "Enable Login via Xsolla"
+    xsolla_auth_login: "Login from PA"
+    xsolla_auth_secret: "Secret from PA"

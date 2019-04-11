@@ -1,0 +1,9 @@
+# encoding: utf-8
+
+en:
+  js:
+    login:
+      xsolla:
+        name: "Xsolla login"
+        title: "with Xsolla"
+        message: "Authenticating with Xsolla"
