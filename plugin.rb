@@ -39,7 +39,7 @@ class XsollaAuthenticator < ::Auth::OAuth2Authenticator
 
     uid = auth[:uid]
     result.name = auth[:info].name
-    result.username = uid
+    result.username = auth[:info].name
     result.email = auth[:info].email
     result.email_valid = true
 
@@ -63,9 +63,8 @@ button_title = "with Xsolla"
 auth_provider :title => button_title,
               :authenticator => XsollaAuthenticator.new('xsolla'),
               :message => "Authorizing with #{title} (make sure pop up blockers are not enabled)",
-              :frame_width => 600,
-              :frame_height => 380,
-              :background_color => '#ff005b'
+              :frame_width => 920,
+              :frame_height => 800
 
 register_css <<CSS
 .btn-social.xsolla {
