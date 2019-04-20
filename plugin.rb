@@ -31,7 +31,7 @@ class XsollaAuthenticator < ::Auth::OAuth2Authenticator
                       :uid_claim => 'id',
                       :required_claims => [ 'email'],
                       :secret => SiteSetting.xsolla_auth_secret,
-                      :auth_url => "https://xl-widget.xsolla.com/?projectId=#{SiteSetting.xsolla_auth_login}&login_url=http://localhost:3000/api/healthcheck/login"
+                      :auth_url => "https://xl-widget.xsolla.com/?projectId=#{SiteSetting.xsolla_auth_login}&login_url=http://#{GlobalSetting.hostname}/auth/xsolla/callback"
   end
 
   def after_authenticate(auth)
