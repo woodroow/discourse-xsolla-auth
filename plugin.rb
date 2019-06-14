@@ -11,7 +11,7 @@ enabled_site_setting :xsolla_auth_secret
 
 require_dependency 'auth/oauth2_authenticator'
 
-gem "discourse-omniauth-jwt", :git => "git://github.com/woodroow/discourse-omniauth-jwt.git"
+gem "discourse-omniauth-jwt", "0.0.2", git: 'https://github.com/woodroow/discourse-omniauth-jwt', require: false
 
 require 'omniauth/jwt'
 
