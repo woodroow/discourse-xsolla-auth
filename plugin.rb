@@ -2,7 +2,7 @@
 # about: Auth with xsolla login widget
 # version: 0.1
 # author: Veshkurov Artem
-# url: https://github.com/woodrow/discourse-xsolla-auth
+# url: https://github.com/woodroow/discourse-xsolla-auth
 # used JWT plugin: https://github.com/discourse/discourse-jwt
 
 enabled_site_setting :xsolla_auth_enabled
@@ -11,7 +11,7 @@ enabled_site_setting :xsolla_auth_secret
 
 require_dependency 'auth/oauth2_authenticator'
 
-gem "discourse-omniauth-jwt", "0.0.2", require: false
+gem "discourse-omniauth-jwt", :git => "git://github.com/woodroow/discourse-omniauth-jwt.git", "0.0.2", require: false
 
 require 'omniauth/jwt'
 
