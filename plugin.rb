@@ -11,7 +11,7 @@ enabled_site_setting :xsolla_auth_secret
 
 require_dependency 'auth/oauth2_authenticator'
 
-gem "discourse-omniauth-jwt-0.0.3", git: 'https://github.com/woodroow/discourse-omniauth-jwt'
+gem "discourse-omniauth-jwt", "0.0.3" git: 'https://github.com/woodroow/discourse-omniauth-jwt'
 
 require 'omniauth/jwt'
 
@@ -29,7 +29,7 @@ class XsollaAuthenticator < ::Auth::OAuth2Authenticator
     omniauth.provider :jwt,
                       :name => 'xsolla',
                       :uid_claim => 'id',
-                      :required_claims => [ 'email'],
+                      :required_claims => ['email'],
                       :secret => SiteSetting.xsolla_auth_secret,
                       :auth_url => "https://xl-widget.xsolla.com/?projectId=#{SiteSetting.xsolla_auth_login}&login_url=https://#{GlobalSetting.hostname}/forum/auth/xsolla/callback"
   end
