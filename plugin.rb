@@ -11,7 +11,7 @@ enabled_site_setting :xsolla_auth_secret
 
 require_dependency 'auth/oauth2_authenticator'
 
-gem "discourse-omniauth-jwt-xsolla", "0.0.5", require: false
+gem "discourse-omniauth-jwt-xsolla", "0.0.6", require: false
 
 require 'omniauth/jwt'
 
