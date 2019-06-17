@@ -26,7 +26,7 @@ class XsollaAuthenticator < ::Auth::OAuth2Authenticator
   end
 
   def register_middleware(omniauth)
-    omniauth.provider :token,
+    omniauth.provider :jwt,
                       :name => 'xsolla',
                       :uid_claim => 'id',
                       :required_claims => [ 'email'],
