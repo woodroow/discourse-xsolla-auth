@@ -26,12 +26,13 @@ class XsollaAuthenticator < ::Auth::OAuth2Authenticator
   end
 
   def register_middleware(omniauth)
+    auth_url = "https://xl-widget.xsolla.com/?projectId=#{env['LOGIN_PROJECT']}&login_url=https://#{GlobalSetting.hostname}/forum/auth/xsolla/callback"
     omniauth.provider :jwt,
                       :name => 'xsolla',
                       :uid_claim => 'id',
                       :required_claims => ['email'],
-                      :secret => nil,
-                      :auth_url => "https://xl-widget.xsolla.com/?projectId=#{SiteSetting.xsolla_auth_login}&login_url=https://#{GlobalSetting.hostname}/forum/auth/xsolla/callback"
+                      :secret => 'some_secret',
+                      :auth_url => auth_url
   end
 
   def after_authenticate(auth)
