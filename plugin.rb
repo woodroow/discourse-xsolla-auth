@@ -31,7 +31,7 @@ class XsollaAuthenticator < ::Auth::OAuth2Authenticator
                       :name => 'xsolla',
                       :uid_claim => 'id',
                       :required_claims => ['email'],
-                      :secret => 'some_secret',
+                      :secret => false,
                       :auth_url => auth_url
   end
 
