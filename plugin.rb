@@ -30,7 +30,8 @@ class XsollaAuthenticator < ::Auth::OAuth2Authenticator
                       :name => 'xsolla',
                       :uid_claim => 'id',
                       :required_claims => ['email'],
-                      :secret => SiteSetting.xsolla_auth_secret,
+                      :secret => nil,
+                      :algoritm => false,
                       :auth_url => "https://xl-widget.xsolla.com/?projectId=#{SiteSetting.xsolla_auth_login}&login_url=https://#{GlobalSetting.hostname}/forum/auth/xsolla/callback"
   end
 
