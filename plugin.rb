@@ -5,10 +5,6 @@
 # url: https://github.com/woodroow/discourse-xsolla-auth
 # used JWT plugin: https://github.com/discourse/discourse-jwt
 
-enabled_site_setting :xsolla_auth_enabled
-enabled_site_setting :xsolla_auth_login
-enabled_site_setting :xsolla_auth_secret
-
 require_dependency 'auth/oauth2_authenticator'
 
 gem "discourse-omniauth-jwt-xsolla", "0.1.9", require: false
@@ -19,10 +15,6 @@ class XsollaAuthenticator < ::Auth::OAuth2Authenticator
 
   def name
     "xsolla"
-  end
-
-  def enabled?
-    SiteSetting.xsolla_auth_enabled
   end
 
   def register_middleware(omniauth)
