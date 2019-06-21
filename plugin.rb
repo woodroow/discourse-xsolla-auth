@@ -18,7 +18,7 @@ class XsollaAuthenticator < ::Auth::OAuth2Authenticator
   end
 
   def register_middleware(omniauth)
-    auth_url = "https://xl-widget.xsolla.com/?projectId=#{ENV['LOGIN_PROJECT']}&login_url=https://#{GlobalSetting.hostname}/forum/auth/xsolla/callback"
+    auth_url = "https://xl-widget.xsolla.com/?projectId=#{ENV['LOGIN_PROJECT']}&fields=email&login_url=https://#{GlobalSetting.hostname}/forum/auth/xsolla/callback"
     omniauth.provider :jwt,
                       :name => 'xsolla',
                       :uid_claim => 'id',
