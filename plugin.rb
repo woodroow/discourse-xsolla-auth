@@ -21,8 +21,8 @@ class XsollaAuthenticator < ::Auth::OAuth2Authenticator
     auth_url = "https://xl-widget.xsolla.com/?projectId=#{ENV['LOGIN_PROJECT']}&fields=email&login_url=https://#{GlobalSetting.hostname}/forum/auth/xsolla/callback"
     omniauth.provider :jwt,
                       :name => 'xsolla',
-                      :uid_claim => 'id',
-                      :required_claims => ['email'],
+                      :uid_claim => 'sub',
+                      :required_claims => ['email','sub'],
                       :secret => false,
                       :auth_url => auth_url
   end
